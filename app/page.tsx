@@ -255,7 +255,6 @@ export default function LandingPage() {
               variant="outline"
               className="mb-4 border-slate-300 text-slate-700 bg-white/50 rounded-full px-4 py-2 font-medium"
             >
-              <Heart className="h-4 w-4 mr-2 text-rose-500" />
               Dukung Developer
             </Badge>
             <h2 className="text-4xl font-display font-bold text-slate-800 mb-4">Bantu Kami Terus Berkembang</h2>
