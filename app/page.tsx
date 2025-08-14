@@ -131,62 +131,32 @@ export default function LandingPage() {
 
           <div className="max-w-7xl mx-auto space-y-8">
             {/* Row 1 - Single Dashboard Overview */}
-            <div className="bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl overflow-hidden border border-slate-200/50 transition-all duration-500 hover:shadow-3xl">
-              <div className="bg-gradient-to-r from-slate-600 to-slate-700 p-4">
-                <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                  <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                  <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                  <span className="text-white text-sm ml-4 font-medium">Dashboard - Overview</span>
-                </div>
-              </div>
-              <div className="aspect-video w-full">
-                <img
-                  src="/academic-dashboard-warm.png"
-                  alt="Dashboard Overview - Statistik siswa dan data kehadiran"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+            <div className="max-w-7xl mx-auto">
+              <img
+                src="/presensi.png"
+                alt="Dashboard Sistem Presensi Kelola Akademik - Interface lengkap untuk pencatatan kehadiran siswa"
+                className="w-full h-auto object-cover"
+              />
             </div>
 
             {/* Row 2 - Two Dashboards Side by Side */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Student Management Dashboard */}
-              <div className="bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl overflow-hidden border border-slate-200/50 transition-all duration-500 hover:shadow-3xl">
-                <div className="bg-gradient-to-r from-slate-600 to-slate-700 p-4">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                    <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                    <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                    <span className="text-white text-sm ml-4 font-medium">Manajemen Siswa</span>
-                  </div>
-                </div>
-                <div className="aspect-video w-full">
-                  <img
-                    src="/student-management-warm.png"
-                    alt="Manajemen Siswa - Daftar siswa dan profil lengkap"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+              {/* Dashboard Analytics */}
+              <div className="max-w-full mx-auto">
+                <img
+                  src="/dashboard.png"
+                  alt="Dashboard Analytics Kelola Akademik - Grafik statistik siswa dan rekap presensi"
+                  className="w-full h-auto object-cover"
+                />
               </div>
 
-              {/* Attendance System Dashboard */}
-              <div className="bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl overflow-hidden border border-slate-200/50 transition-all duration-500 hover:shadow-3xl">
-                <div className="bg-gradient-to-r from-slate-600 to-slate-700 p-4">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                    <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                    <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                    <span className="text-white text-sm ml-4 font-medium">Sistem Presensi</span>
-                  </div>
-                </div>
-                <div className="aspect-video w-full">
-                  <img
-                    src="/attendance-system-warm.png"
-                    alt="Sistem Presensi - Rekap kehadiran harian dan bulanan"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+              {/* Rekap Presensi Dashboard */}
+              <div className="max-w-full mx-auto">
+                <img
+                  src="/rekap.png"
+                  alt="Rekap Presensi Kelola Akademik - Tabel laporan kehadiran siswa dengan data lengkap"
+                  className="w-full h-auto object-cover"
+                />
               </div>
             </div>
           </div>
