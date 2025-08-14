@@ -228,19 +228,36 @@ export default function LandingPage() {
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className="border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-slate-200/50 bg-white/90 backdrop-blur-md rounded-2xl group"
+                className="relative border-0 shadow-lg hover:shadow-2xl transition-all duration-[800ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:-translate-y-3 border-slate-200/50 bg-white/90 backdrop-blur-md rounded-2xl group cursor-pointer overflow-hidden will-change-transform"
               >
-                <CardHeader>
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl flex items-center justify-center mb-4 transition-all duration-300 group-hover:from-blue-200 group-hover:to-indigo-200">
-                    <feature.icon className="h-6 w-6 text-slate-600" />
+                {/* Animated background gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-indigo-50/0 to-purple-50/0 group-hover:from-blue-50/30 group-hover:via-indigo-50/20 group-hover:to-purple-50/10 transition-all duration-[800ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] rounded-2xl" />
+
+                {/* Subtle shimmer effect */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-[600ms] ease-out">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-[1200ms] ease-out" />
+                </div>
+
+                <CardHeader className="relative z-10">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl flex items-center justify-center mb-4 transition-all duration-[600ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:from-blue-200 group-hover:to-indigo-200 group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-lg">
+                    <feature.icon className="h-6 w-6 text-slate-600 transition-all duration-[600ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:text-blue-700 group-hover:scale-110" />
                   </div>
-                  <CardTitle className="text-xl font-display font-semibold text-slate-800">{feature.title}</CardTitle>
+                  <CardTitle className="text-xl font-display font-semibold text-slate-800 transition-all duration-[400ms] ease-out group-hover:text-blue-800 group-hover:translate-x-1">
+                    {feature.title}
+                  </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base leading-relaxed text-slate-600 font-normal">
+
+                <CardContent className="relative z-10">
+                  <CardDescription className="text-base leading-relaxed text-slate-600 font-normal transition-all duration-[400ms] ease-out group-hover:text-slate-700 group-hover:translate-x-1">
                     {feature.description}
                   </CardDescription>
                 </CardContent>
+
+                {/* Enhanced bottom border accent */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 transform scale-x-0 transition-all duration-[600ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-x-100 rounded-b-2xl origin-left" />
+
+                {/* Subtle border glow */}
+                <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-blue-200/50 transition-all duration-[600ms] ease-out" />
               </Card>
             ))}
           </div>
