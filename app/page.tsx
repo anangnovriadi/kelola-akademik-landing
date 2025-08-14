@@ -323,7 +323,7 @@ export default function LandingPage() {
                     asChild
                   >
                     <Link
-                      href="https://saweria.co/kelolaakademik?utm_source=landing&utm_medium=button&utm_campaign=support"
+                      href="https://saweria.co/anangnovriadi?utm_source=landing&utm_medium=button&utm_campaign=support"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
