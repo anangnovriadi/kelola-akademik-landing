@@ -28,13 +28,13 @@ export default function Navbar() {
         </div>
         <nav className="hidden md:flex items-center space-x-8">
           <button
-            className="text-slate-600 hover:text-slate-700 transition-all duration-300 font-medium"
+            className="text-slate-600 hover:text-slate-700 transition-all duration-300 font-medium cursor-pointer"
             onClick={() => scrollToSection("features")}
           >
             Fitur
           </button>
           <button
-            className="text-slate-600 hover:text-slate-700 transition-all duration-300 font-medium"
+            className="text-slate-600 hover:text-slate-700 transition-all duration-300 font-medium cursor-pointer"
             onClick={() => scrollToSection("support")}
           >
             Dukung Kami

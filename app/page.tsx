@@ -104,7 +104,7 @@ export default function LandingPage() {
             <Button
               size="lg"
               variant="outline"
-              className="text-lg px-8 py-6 bg-white/80 backdrop-blur-sm border-slate-300 text-slate-700 hover:bg-slate-50/90 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-medium"
+              className="text-lg px-8 py-6 bg-white/80 backdrop-blur-sm border-slate-300 text-slate-700 hover:bg-slate-50/90 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-medium cursor-pointer"
               onClick={() => scrollToSection("dashboard-preview")}
             >
               Lihat Tampilan Dashboard
@@ -341,7 +341,7 @@ export default function LandingPage() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="w-full bg-white/80 backdrop-blur-sm border-slate-300 text-slate-700 hover:bg-slate-50/90 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-medium mt-auto"
+                    className="w-full bg-white/80 backdrop-blur-sm border-slate-300 text-slate-700 hover:bg-slate-50/90 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-medium mt-auto cursor-pointer"
                   >
                     Hubungi Developer
                   </Button>
