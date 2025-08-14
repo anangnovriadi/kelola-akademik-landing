@@ -121,7 +121,7 @@ export default function LandingPage() {
               variant="outline"
               className="mb-4 border-slate-300 text-slate-700 bg-white/50 rounded-full px-4 py-2 font-medium"
             >
-              Tampilan Dashboard
+              Interface Dashboard
             </Badge>
             <h2 className="text-4xl font-display font-bold text-slate-800 mb-4">Tampilan Dashboard Kelola Akademik</h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto font-normal">
@@ -225,44 +225,24 @@ export default function LandingPage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => {
-              const IconComponent = feature.icon
-              return (
-                <Card
-                  key={index}
-                  className="relative border-0 shadow-lg hover:shadow-2xl transition-all duration-[800ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:-translate-y-3 border-slate-200/50 bg-white/90 backdrop-blur-md rounded-2xl group cursor-pointer overflow-hidden will-change-transform"
-                >
-                  {/* Animated background gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-indigo-50/0 to-purple-50/0 group-hover:from-blue-50/30 group-hover:via-indigo-50/20 group-hover:to-purple-50/10 transition-all duration-[800ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] rounded-2xl" />
-
-                  {/* Subtle shimmer effect */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-[600ms] ease-out">
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-[1200ms] ease-out" />
+            {features.map((feature, index) => (
+              <Card
+                key={index}
+                className="border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-slate-200/50 bg-white/90 backdrop-blur-md rounded-2xl group"
+              >
+                <CardHeader>
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl flex items-center justify-center mb-4 transition-all duration-300 group-hover:from-blue-200 group-hover:to-indigo-200">
+                    <feature.icon className="h-6 w-6 text-slate-600" />
                   </div>
-
-                  <CardHeader className="relative z-10">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl flex items-center justify-center mb-4 transition-all duration-[600ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:from-blue-200 group-hover:to-indigo-200 group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-lg">
-                      <IconComponent className="h-6 w-6 text-slate-600 transition-all duration-[600ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:text-blue-700 group-hover:scale-110" />
-                    </div>
-                    <CardTitle className="text-xl font-display font-semibold text-slate-800 transition-all duration-[400ms] ease-out group-hover:text-blue-800 group-hover:translate-x-1">
-                      {feature.title}
-                    </CardTitle>
-                  </CardHeader>
-
-                  <CardContent className="relative z-10">
-                    <CardDescription className="text-base leading-relaxed text-slate-600 font-normal transition-all duration-[400ms] ease-out group-hover:text-slate-700 group-hover:translate-x-1">
-                      {feature.description}
-                    </CardDescription>
-                  </CardContent>
-
-                  {/* Enhanced bottom border accent */}
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 transform scale-x-0 transition-all duration-[600ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-x-100 rounded-b-2xl origin-left" />
-
-                  {/* Subtle border glow */}
-                  <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-blue-200/50 transition-all duration-[600ms] ease-out" />
-                </Card>
-              )
-            })}
+                  <CardTitle className="text-xl font-display font-semibold text-slate-800">{feature.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base leading-relaxed text-slate-600 font-normal">
+                    {feature.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -275,6 +255,7 @@ export default function LandingPage() {
               variant="outline"
               className="mb-4 border-slate-300 text-slate-700 bg-white/50 rounded-full px-4 py-2 font-medium"
             >
+              <Heart className="h-4 w-4 mr-2 text-rose-500" />
               Dukung Developer
             </Badge>
             <h2 className="text-4xl font-display font-bold text-slate-800 mb-4">Bantu Kami Terus Berkembang</h2>
@@ -298,8 +279,8 @@ export default function LandingPage() {
                     membantu kami untuk:
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="text-center">
-                  <div className="mb-6">
+                <CardContent className="text-center flex-1 flex flex-col">
+                  <div className="mb-6 flex-1">
                     <div className="bg-slate-50 rounded-xl p-4 mb-6">
                       <ul className="text-sm text-slate-600 space-y-3 text-left font-normal">
                         <li className="flex items-center">
@@ -319,14 +300,10 @@ export default function LandingPage() {
                   </div>
                   <Button
                     size="lg"
-                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white transition-all duration-300 shadow-lg hover:shadow-xl rounded-full px-8 font-semibold"
+                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-semibold mt-auto"
                     asChild
                   >
-                    <Link
-                      href="https://saweria.co/anangnovriadi?utm_source=landing&utm_medium=button&utm_campaign=support"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <Link href="https://saweria.co/anangnovriadi" target="_blank" rel="noopener noreferrer">
                       <Coffee className="mr-2 h-5 w-5" />
                       Dukung via Saweria
                     </Link>
@@ -347,8 +324,8 @@ export default function LandingPage() {
                     Tidak harus donasi, ada cara lain untuk membantu kami mengembangkan sistem ini:
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="text-center flex flex-col h-full">
-                  <div className="mb-6 flex-grow">
+                <CardContent className="text-center flex-1 flex flex-col">
+                  <div className="mb-6 flex-1">
                     <div className="bg-slate-50 rounded-xl p-4 mb-6">
                       <ul className="text-sm text-slate-600 space-y-3 text-left font-normal">
                         <li className="flex items-center">
@@ -366,28 +343,21 @@ export default function LandingPage() {
                     variant="outline"
                     size="lg"
                     className="w-full bg-white/80 backdrop-blur-sm border-slate-300 text-slate-700 hover:bg-slate-50/90 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-medium mt-auto"
-                    asChild
                   >
-                    <Link
-                      href="https://wa.me/6285816203961?text=Halo%20tim%20Kelola%20Akademik,%0A%0ASaya%20tertarik%20dengan%20sistem%20ini%20dan%20ingin%20bertanya%20lebih%20lanjut."
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Hubungi Developer
-                    </Link>
+                    Hubungi Developer
                   </Button>
                 </CardContent>
               </Card>
             </div>
-          </div>
 
-          <div className="text-center mt-12">
-            <div className="bg-gradient-to-r from-slate-100/90 to-blue-100/90 backdrop-blur-sm rounded-2xl p-8 border border-slate-200/50">
-              <h3 className="text-2xl font-display font-bold text-slate-800 mb-4">Terima Kasih! 🙏</h3>
-              <p className="text-slate-600 max-w-2xl mx-auto font-normal">
-                Setiap dukungan dari Anda, baik berupa donasi, review, atau rekomendasi, sangat berarti bagi kami.
-                Bersama-sama kita wujudkan sistem pendidikan Indonesia yang lebih baik dan modern.
-              </p>
+            <div className="text-center mt-12">
+              <div className="bg-gradient-to-r from-slate-100/90 to-blue-100/90 backdrop-blur-sm rounded-2xl p-8 border border-slate-200/50">
+                <h3 className="text-2xl font-display font-bold text-slate-800 mb-4">Terima Kasih! 🙏</h3>
+                <p className="text-slate-600 max-w-2xl mx-auto font-normal">
+                  Setiap dukungan dari Anda, baik berupa donasi, review, atau rekomendasi, sangat berarti bagi kami.
+                  Bersama-sama kita wujudkan sistem pendidikan Indonesia yang lebih baik dan modern.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -409,9 +379,16 @@ export default function LandingPage() {
               className="text-lg px-8 py-6 bg-white text-slate-800 hover:bg-slate-100 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-semibold"
             >
               <Link href="/dashboard">
-                Akses Dashboard
+                Akses Dashboard Gratis
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-slate-700 bg-transparent transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-medium"
+            >
+              Hubungi Tim Kami
             </Button>
           </div>
         </div>
