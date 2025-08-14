@@ -121,7 +121,7 @@ export default function LandingPage() {
               variant="outline"
               className="mb-4 border-slate-300 text-slate-700 bg-white/50 rounded-full px-4 py-2 font-medium"
             >
-              Interface Dashboard
+              Tampilan Dashboard
             </Badge>
             <h2 className="text-4xl font-display font-bold text-slate-800 mb-4">Tampilan Dashboard Kelola Akademik</h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto font-normal">
@@ -255,7 +255,6 @@ export default function LandingPage() {
               variant="outline"
               className="mb-4 border-slate-300 text-slate-700 bg-white/50 rounded-full px-4 py-2 font-medium"
             >
-              <Heart className="h-4 w-4 mr-2 text-rose-500" />
               Dukung Developer
             </Badge>
             <h2 className="text-4xl font-display font-bold text-slate-800 mb-4">Bantu Kami Terus Berkembang</h2>
@@ -275,35 +274,39 @@ export default function LandingPage() {
                   </div>
                   <CardTitle className="text-2xl font-display font-semibold text-slate-800">Saweria</CardTitle>
                   <CardDescription className="text-slate-600 font-normal">
-                    Belikan kami kopi untuk semangat coding yang lebih tinggi
+                    Belikan kami kopi untuk semangat coding yang lebih tinggi. Donasi mulai dari Rp 5.000 sudah sangat
+                    membantu kami untuk:
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="text-center">
                   <div className="mb-6">
-                    <p className="text-sm text-slate-600 font-normal">
-                      Donasi mulai dari Rp 5.000 sudah sangat membantu kami untuk:
-                    </p>
-                    <ul className="text-sm text-slate-600 space-y-2 text-left font-normal">
-                      <li className="flex items-center">
-                        <CheckCircle className="h-4 w-4 text-emerald-600 mr-2 flex-shrink-0" />
-                        Mengembangkan fitur baru
-                      </li>
-                      <li className="flex items-center">
-                        <CheckCircle className="h-4 w-4 text-emerald-600 mr-2 flex-shrink-0" />
-                        Maintenance server
-                      </li>
-                      <li className="flex items-center">
-                        <CheckCircle className="h-4 w-4 text-emerald-600 mr-2 flex-shrink-0" />
-                        Meningkatkan performa sistem
-                      </li>
-                    </ul>
+                    <div className="bg-slate-50 rounded-xl p-4 mb-6">
+                      <ul className="text-sm text-slate-600 space-y-3 text-left font-normal">
+                        <li className="flex items-center">
+                          <CheckCircle className="h-4 w-4 text-emerald-600 mr-3 flex-shrink-0" />
+                          <span>Mengembangkan fitur baru</span>
+                        </li>
+                        <li className="flex items-center">
+                          <CheckCircle className="h-4 w-4 text-emerald-600 mr-3 flex-shrink-0" />
+                          <span>Maintenance server</span>
+                        </li>
+                        <li className="flex items-center">
+                          <CheckCircle className="h-4 w-4 text-emerald-600 mr-3 flex-shrink-0" />
+                          <span>Meningkatkan performa sistem</span>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                   <Button
                     size="lg"
-                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-semibold"
+                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white transition-all duration-300 shadow-lg hover:shadow-xl rounded-full px-8 font-semibold"
                     asChild
                   >
-                    <Link href="https://saweria.co/kelolaakademik" target="_blank" rel="noopener noreferrer">
+                    <Link
+                      href="https://saweria.co/kelolaakademik?utm_source=landing&utm_medium=button&utm_campaign=support"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <Coffee className="mr-2 h-5 w-5" />
                       Dukung via Saweria
                     </Link>
@@ -321,47 +324,50 @@ export default function LandingPage() {
                     Cara Lain Mendukung
                   </CardTitle>
                   <CardDescription className="text-slate-600 font-normal">
-                    Tidak harus donasi, ada cara lain untuk membantu kami
+                    Tidak harus donasi, ada cara lain untuk membantu kami mengembangkan sistem ini:
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div className="flex items-start space-x-3">
-                      <Users className="h-5 w-5 text-slate-600 flex-shrink-0 mt-0.5" />
-                      <div>
-                        <h4 className="font-semibold text-slate-800">Rekomendasikan ke Sekolah Lain</h4>
-                        <p className="text-sm text-slate-600 font-normal">
-                          Bantu sekolah lain merasakan manfaat sistem ini
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <Settings className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                      <div>
-                        <h4 className="font-semibold text-slate-800">Berikan Feedback</h4>
-                        <p className="text-sm text-slate-600 font-normal">Saran dan masukan untuk perbaikan sistem</p>
-                      </div>
+                <CardContent className="text-center">
+                  <div className="mb-6">
+                    <div className="bg-slate-50 rounded-xl p-4 mb-6">
+                      <ul className="text-sm text-slate-600 space-y-3 text-left font-normal">
+                        <li className="flex items-center">
+                          <Users className="h-4 w-4 text-slate-600 mr-3 flex-shrink-0" />
+                          <span>Rekomendasikan ke sekolah lain</span>
+                        </li>
+                        <li className="flex items-center">
+                          <Settings className="h-4 w-4 text-emerald-600 mr-3 flex-shrink-0" />
+                          <span>Berikan feedback dan saran</span>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                   <Button
                     variant="outline"
                     size="lg"
-                    className="w-full mt-6 bg-white/80 backdrop-blur-sm border-slate-300 text-slate-700 hover:bg-slate-50/90 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-medium"
+                    className="w-full bg-white/80 backdrop-blur-sm border-slate-300 text-slate-700 hover:bg-slate-50/90 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-medium"
+                    asChild
                   >
-                    Hubungi Developer
+                    <Link
+                      href="https://wa.me/6285816203961?text=Halo%20tim%20Kelola%20Akademik,%0A%0ASaya%20tertarik%20dengan%20sistem%20ini%20dan%20ingin%20bertanya%20lebih%20lanjut."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Hubungi Developer
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>
             </div>
+          </div>
 
-            <div className="text-center mt-12">
-              <div className="bg-gradient-to-r from-slate-100/90 to-blue-100/90 backdrop-blur-sm rounded-2xl p-8 border border-slate-200/50">
-                <h3 className="text-2xl font-display font-bold text-slate-800 mb-4">Terima Kasih! 🙏</h3>
-                <p className="text-slate-600 max-w-2xl mx-auto font-normal">
-                  Setiap dukungan dari Anda, baik berupa donasi, review, atau rekomendasi, sangat berarti bagi kami.
-                  Bersama-sama kita wujudkan sistem pendidikan Indonesia yang lebih baik dan modern.
-                </p>
-              </div>
+          <div className="text-center mt-12">
+            <div className="bg-gradient-to-r from-slate-100/90 to-blue-100/90 backdrop-blur-sm rounded-2xl p-8 border border-slate-200/50">
+              <h3 className="text-2xl font-display font-bold text-slate-800 mb-4">Terima Kasih! 🙏</h3>
+              <p className="text-slate-600 max-w-2xl mx-auto font-normal">
+                Setiap dukungan dari Anda, baik berupa donasi, review, atau rekomendasi, sangat berarti bagi kami.
+                Bersama-sama kita wujudkan sistem pendidikan Indonesia yang lebih baik dan modern.
+              </p>
             </div>
           </div>
         </div>
@@ -383,7 +389,7 @@ export default function LandingPage() {
               className="text-lg px-8 py-6 bg-white text-slate-800 hover:bg-slate-100 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-semibold"
             >
               <Link href="/dashboard">
-                Akses Dashboard Gratis
+                Akses Dashboard
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
@@ -391,8 +397,15 @@ export default function LandingPage() {
               size="lg"
               variant="outline"
               className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-slate-700 bg-transparent transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-medium"
+              asChild
             >
-              Hubungi Tim Kami
+              <Link
+                href="https://wa.me/6285816203961?text=Halo%20tim%20Kelola%20Akademik,%0A%0ASaya%20tertarik%20dengan%20sistem%20ini%20dan%20ingin%20mengetahui%20lebih%20lanjut."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Hubungi Developer
+              </Link>
             </Button>
           </div>
         </div>
