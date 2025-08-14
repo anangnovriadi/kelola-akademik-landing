@@ -68,7 +68,7 @@ export default function LandingPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-100 via-orange-100 to-red-100 scroll-smooth">
+    <div className="min-h-screen scroll-smooth transition-all duration-300 main-bg-light">
       <Navbar />
 
       {/* Hero Section */}
@@ -76,17 +76,17 @@ export default function LandingPage() {
         <div className="container mx-auto text-center max-w-4xl">
           <Badge
             variant="secondary"
-            className="mb-4 bg-gradient-to-r from-yellow-300 to-amber-300 text-amber-900 border-none rounded-full px-4 py-2"
+            className="mb-4 bg-gradient-to-r from-blue-100 to-indigo-100 text-slate-700 border-none rounded-full px-4 py-2 font-medium"
           >
             Sistem Manajemen Akademik Terdepan
           </Badge>
-          <h1 className="text-5xl md:text-6xl font-bold text-amber-900 mb-6 leading-tight">
+          <h1 className="text-5xl md:text-6xl font-display font-bold text-slate-800 mb-6 leading-tight">
             Kelola Akademik
-            <span className="text-transparent bg-gradient-to-r from-orange-700 to-red-700 bg-clip-text block">
+            <span className="text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text block">
               Lebih Mudah & Efisien
             </span>
           </h1>
-          <p className="text-xl text-amber-800/90 mb-8 leading-relaxed">
+          <p className="text-xl text-slate-600 mb-8 leading-relaxed font-normal">
             Platform manajemen akademik all-in-one yang membantu sekolah mengelola siswa, presensi, dan administrasi
             dengan lebih efektif dan terorganisir.
           </p>
@@ -94,7 +94,7 @@ export default function LandingPage() {
             <Button
               size="lg"
               asChild
-              className="text-lg px-8 py-6 bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full"
+              className="text-lg px-8 py-6 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-semibold"
             >
               <Link href="/dashboard">
                 Mulai Sekarang
@@ -104,7 +104,7 @@ export default function LandingPage() {
             <Button
               size="lg"
               variant="outline"
-              className="text-lg px-8 py-6 bg-white/70 backdrop-blur-sm border-amber-400 text-amber-800 hover:bg-amber-50/80 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full"
+              className="text-lg px-8 py-6 bg-white/80 backdrop-blur-sm border-slate-300 text-slate-700 hover:bg-slate-50/90 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-medium"
               onClick={() => scrollToSection("dashboard-preview")}
             >
               Lihat Tampilan Dashboard
@@ -114,27 +114,30 @@ export default function LandingPage() {
       </section>
 
       {/* Dashboard Preview Section */}
-      <section id="dashboard-preview" className="py-20 px-4 bg-white/40 backdrop-blur-sm">
+      <section id="dashboard-preview" className="py-20 px-4 bg-white/60 backdrop-blur-sm">
         <div className="container mx-auto">
           <div className="text-center mb-12">
-            <Badge variant="outline" className="mb-4 border-amber-400 text-amber-800 rounded-full px-4 py-2">
+            <Badge
+              variant="outline"
+              className="mb-4 border-slate-300 text-slate-700 bg-white/50 rounded-full px-4 py-2 font-medium"
+            >
               Interface Dashboard
             </Badge>
-            <h2 className="text-4xl font-bold text-amber-900 mb-4">Tampilan Dashboard Kelola Akademik</h2>
-            <p className="text-xl text-amber-800/90 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-display font-bold text-slate-800 mb-4">Tampilan Dashboard Kelola Akademik</h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto font-normal">
               Interface yang intuitif dan mudah digunakan untuk mengelola semua aspek akademik sekolah Anda
             </p>
           </div>
 
           <div className="max-w-7xl mx-auto space-y-8">
             {/* Row 1 - Single Dashboard Overview */}
-            <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl overflow-hidden border border-amber-300/50 transition-all duration-500 hover:shadow-3xl">
-              <div className="bg-gradient-to-r from-amber-600 to-orange-600 p-4">
+            <div className="bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl overflow-hidden border border-slate-200/50 transition-all duration-500 hover:shadow-3xl">
+              <div className="bg-gradient-to-r from-slate-600 to-slate-700 p-4">
                 <div className="flex items-center space-x-2">
                   <div className="w-3 h-3 bg-red-400 rounded-full"></div>
                   <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
                   <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                  <span className="text-white text-sm ml-4">Dashboard - Overview</span>
+                  <span className="text-white text-sm ml-4 font-medium">Dashboard - Overview</span>
                 </div>
               </div>
               <div className="aspect-video w-full">
@@ -149,13 +152,13 @@ export default function LandingPage() {
             {/* Row 2 - Two Dashboards Side by Side */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Student Management Dashboard */}
-              <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl overflow-hidden border border-amber-300/50 transition-all duration-500 hover:shadow-3xl">
-                <div className="bg-gradient-to-r from-amber-600 to-orange-600 p-4">
+              <div className="bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl overflow-hidden border border-slate-200/50 transition-all duration-500 hover:shadow-3xl">
+                <div className="bg-gradient-to-r from-slate-600 to-slate-700 p-4">
                   <div className="flex items-center space-x-2">
                     <div className="w-3 h-3 bg-red-400 rounded-full"></div>
                     <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
                     <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                    <span className="text-white text-sm ml-4">Manajemen Siswa</span>
+                    <span className="text-white text-sm ml-4 font-medium">Manajemen Siswa</span>
                   </div>
                 </div>
                 <div className="aspect-video w-full">
@@ -168,13 +171,13 @@ export default function LandingPage() {
               </div>
 
               {/* Attendance System Dashboard */}
-              <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl overflow-hidden border border-amber-300/50 transition-all duration-500 hover:shadow-3xl">
-                <div className="bg-gradient-to-r from-amber-600 to-orange-600 p-4">
+              <div className="bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl overflow-hidden border border-slate-200/50 transition-all duration-500 hover:shadow-3xl">
+                <div className="bg-gradient-to-r from-slate-600 to-slate-700 p-4">
                   <div className="flex items-center space-x-2">
                     <div className="w-3 h-3 bg-red-400 rounded-full"></div>
                     <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
                     <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                    <span className="text-white text-sm ml-4">Sistem Presensi</span>
+                    <span className="text-white text-sm ml-4 font-medium">Sistem Presensi</span>
                   </div>
                 </div>
                 <div className="aspect-video w-full">
@@ -192,7 +195,7 @@ export default function LandingPage() {
             <Button
               size="lg"
               asChild
-              className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full px-8"
+              className="bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full px-8 font-semibold"
             >
               <Link href="/dashboard">
                 Akses Dashboard Lengkap
@@ -204,14 +207,19 @@ export default function LandingPage() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 px-4 bg-white/50 backdrop-blur-sm">
+      <section id="features" className="py-20 px-4 bg-white/80 backdrop-blur-sm">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4 border-amber-400 text-amber-800 rounded-full px-4 py-2">
+            <Badge
+              variant="outline"
+              className="mb-4 border-slate-300 text-slate-700 bg-white/50 rounded-full px-4 py-2 font-medium"
+            >
               Fitur Unggulan
             </Badge>
-            <h2 className="text-4xl font-bold text-amber-900 mb-4">Semua yang Anda Butuhkan dalam Satu Platform</h2>
-            <p className="text-xl text-amber-800/90 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-display font-bold text-slate-800 mb-4">
+              Semua yang Anda Butuhkan dalam Satu Platform
+            </h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto font-normal">
               Fitur lengkap untuk mengelola seluruh aspek administrasi akademik sekolah Anda
             </p>
           </div>
@@ -220,16 +228,16 @@ export default function LandingPage() {
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className="border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-amber-300/50 bg-white/80 backdrop-blur-md rounded-2xl group"
+                className="border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-slate-200/50 bg-white/90 backdrop-blur-md rounded-2xl group"
               >
                 <CardHeader>
-                  <div className="w-12 h-12 bg-gradient-to-br from-amber-300 to-orange-300 rounded-2xl flex items-center justify-center mb-4 transition-all duration-300 group-hover:from-amber-400 group-hover:to-orange-400">
-                    <feature.icon className="h-6 w-6 text-amber-800" />
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl flex items-center justify-center mb-4 transition-all duration-300 group-hover:from-blue-200 group-hover:to-indigo-200">
+                    <feature.icon className="h-6 w-6 text-slate-600" />
                   </div>
-                  <CardTitle className="text-xl text-amber-900">{feature.title}</CardTitle>
+                  <CardTitle className="text-xl font-display font-semibold text-slate-800">{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base leading-relaxed text-amber-800/90">
+                  <CardDescription className="text-base leading-relaxed text-slate-600 font-normal">
                     {feature.description}
                   </CardDescription>
                 </CardContent>
@@ -240,15 +248,18 @@ export default function LandingPage() {
       </section>
 
       {/* Support Developer Section */}
-      <section id="support" className="py-20 px-4 bg-white/60 backdrop-blur-sm">
+      <section id="support" className="py-20 px-4 bg-white/90 backdrop-blur-sm">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4 border-amber-400 text-amber-800 rounded-full px-4 py-2">
-              <Heart className="h-4 w-4 mr-2 text-red-600" />
+            <Badge
+              variant="outline"
+              className="mb-4 border-slate-300 text-slate-700 bg-white/50 rounded-full px-4 py-2 font-medium"
+            >
+              <Heart className="h-4 w-4 mr-2 text-rose-500" />
               Dukung Developer
             </Badge>
-            <h2 className="text-4xl font-bold text-amber-900 mb-4">Bantu Kami Terus Berkembang</h2>
-            <p className="text-xl text-amber-800/90 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-display font-bold text-slate-800 mb-4">Bantu Kami Terus Berkembang</h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto font-normal">
               Kelola Akademik gratis untuk semua sekolah. Jika sistem ini bermanfaat, dukung kami untuk terus
               mengembangkan fitur-fitur terbaru.
             </p>
@@ -257,39 +268,39 @@ export default function LandingPage() {
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8">
               {/* Donation Card */}
-              <Card className="border-2 border-orange-400/50 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white/80 backdrop-blur-md rounded-2xl">
+              <Card className="border-2 border-blue-200/50 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-md rounded-2xl">
                 <CardHeader className="text-center pb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-orange-300 to-red-300 rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300 hover:from-orange-400 hover:to-red-400">
-                    <Coffee className="h-8 w-8 text-orange-800" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300 hover:from-blue-200 hover:to-indigo-200">
+                    <Coffee className="h-8 w-8 text-slate-600" />
                   </div>
-                  <CardTitle className="text-2xl text-amber-900">Saweria</CardTitle>
-                  <CardDescription className="text-amber-800/90">
+                  <CardTitle className="text-2xl font-display font-semibold text-slate-800">Saweria</CardTitle>
+                  <CardDescription className="text-slate-600 font-normal">
                     Belikan kami kopi untuk semangat coding yang lebih tinggi
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="text-center">
                   <div className="mb-6">
-                    <p className="text-sm text-amber-800/90">
+                    <p className="text-sm text-slate-600 font-normal">
                       Donasi mulai dari Rp 5.000 sudah sangat membantu kami untuk:
                     </p>
-                    <ul className="text-sm text-amber-800 space-y-2 text-left">
+                    <ul className="text-sm text-slate-600 space-y-2 text-left font-normal">
                       <li className="flex items-center">
-                        <CheckCircle className="h-4 w-4 text-green-700 mr-2 flex-shrink-0" />
+                        <CheckCircle className="h-4 w-4 text-emerald-600 mr-2 flex-shrink-0" />
                         Mengembangkan fitur baru
                       </li>
                       <li className="flex items-center">
-                        <CheckCircle className="h-4 w-4 text-green-700 mr-2 flex-shrink-0" />
+                        <CheckCircle className="h-4 w-4 text-emerald-600 mr-2 flex-shrink-0" />
                         Maintenance server
                       </li>
                       <li className="flex items-center">
-                        <CheckCircle className="h-4 w-4 text-green-700 mr-2 flex-shrink-0" />
+                        <CheckCircle className="h-4 w-4 text-emerald-600 mr-2 flex-shrink-0" />
                         Meningkatkan performa sistem
                       </li>
                     </ul>
                   </div>
                   <Button
                     size="lg"
-                    className="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white transition-all duration-300 shadow-lg hover:shadow-xl rounded-full"
+                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-semibold"
                     asChild
                   >
                     <Link href="https://saweria.co/kelolaakademik" target="_blank" rel="noopener noreferrer">
@@ -301,37 +312,41 @@ export default function LandingPage() {
               </Card>
 
               {/* Alternative Support Card */}
-              <Card className="border-2 border-yellow-400/50 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white/80 backdrop-blur-md rounded-2xl">
+              <Card className="border-2 border-slate-200/50 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-md rounded-2xl">
                 <CardHeader className="text-center pb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-yellow-300 to-amber-300 rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300 hover:from-yellow-400 hover:to-amber-400">
-                    <Heart className="h-8 w-8 text-yellow-800" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-slate-100 to-slate-200 rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300 hover:from-slate-200 hover:to-slate-300">
+                    <Heart className="h-8 w-8 text-slate-600" />
                   </div>
-                  <CardTitle className="text-2xl text-amber-900">Cara Lain Mendukung</CardTitle>
-                  <CardDescription className="text-amber-800/90">
+                  <CardTitle className="text-2xl font-display font-semibold text-slate-800">
+                    Cara Lain Mendukung
+                  </CardTitle>
+                  <CardDescription className="text-slate-600 font-normal">
                     Tidak harus donasi, ada cara lain untuk membantu kami
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
                     <div className="flex items-start space-x-3">
-                      <Users className="h-5 w-5 text-amber-700 flex-shrink-0 mt-0.5" />
+                      <Users className="h-5 w-5 text-slate-600 flex-shrink-0 mt-0.5" />
                       <div>
-                        <h4 className="font-semibold text-amber-900">Rekomendasikan ke Sekolah Lain</h4>
-                        <p className="text-sm text-amber-800/90">Bantu sekolah lain merasakan manfaat sistem ini</p>
+                        <h4 className="font-semibold text-slate-800">Rekomendasikan ke Sekolah Lain</h4>
+                        <p className="text-sm text-slate-600 font-normal">
+                          Bantu sekolah lain merasakan manfaat sistem ini
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
-                      <Settings className="h-5 w-5 text-green-700 flex-shrink-0 mt-0.5" />
+                      <Settings className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
                       <div>
-                        <h4 className="font-semibold text-amber-900">Berikan Feedback</h4>
-                        <p className="text-sm text-amber-800/90">Saran dan masukan untuk perbaikan sistem</p>
+                        <h4 className="font-semibold text-slate-800">Berikan Feedback</h4>
+                        <p className="text-sm text-slate-600 font-normal">Saran dan masukan untuk perbaikan sistem</p>
                       </div>
                     </div>
                   </div>
                   <Button
                     variant="outline"
                     size="lg"
-                    className="w-full mt-6 bg-white/70 backdrop-blur-sm border-yellow-400 text-amber-800 hover:bg-yellow-50/80 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full"
+                    className="w-full mt-6 bg-white/80 backdrop-blur-sm border-slate-300 text-slate-700 hover:bg-slate-50/90 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-medium"
                   >
                     Hubungi Developer
                   </Button>
@@ -340,9 +355,9 @@ export default function LandingPage() {
             </div>
 
             <div className="text-center mt-12">
-              <div className="bg-gradient-to-r from-amber-200/80 to-yellow-200/80 backdrop-blur-sm rounded-2xl p-8 border border-amber-300/50">
-                <h3 className="text-2xl font-bold text-amber-900 mb-4">Terima Kasih! 🙏</h3>
-                <p className="text-amber-800/90 max-w-2xl mx-auto">
+              <div className="bg-gradient-to-r from-slate-100/90 to-blue-100/90 backdrop-blur-sm rounded-2xl p-8 border border-slate-200/50">
+                <h3 className="text-2xl font-display font-bold text-slate-800 mb-4">Terima Kasih! 🙏</h3>
+                <p className="text-slate-600 max-w-2xl mx-auto font-normal">
                   Setiap dukungan dari Anda, baik berupa donasi, review, atau rekomendasi, sangat berarti bagi kami.
                   Bersama-sama kita wujudkan sistem pendidikan Indonesia yang lebih baik dan modern.
                 </p>
@@ -353,10 +368,10 @@ export default function LandingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-amber-600 to-orange-600 text-white">
+      <section className="py-20 px-4 bg-gradient-to-r from-slate-600 to-slate-700 text-white">
         <div className="container mx-auto text-center max-w-3xl">
-          <h2 className="text-4xl font-bold mb-6">Siap Meningkatkan Efisiensi Sekolah Anda?</h2>
-          <p className="text-xl opacity-90 mb-8">
+          <h2 className="text-4xl font-display font-bold mb-6">Siap Meningkatkan Efisiensi Sekolah Anda?</h2>
+          <p className="text-xl opacity-90 mb-8 font-normal">
             Bergabunglah dengan ratusan sekolah yang telah merasakan kemudahan mengelola administrasi akademik dengan
             Kelola Akademik.
           </p>
@@ -365,7 +380,7 @@ export default function LandingPage() {
               size="lg"
               variant="secondary"
               asChild
-              className="text-lg px-8 py-6 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full"
+              className="text-lg px-8 py-6 bg-white text-slate-800 hover:bg-slate-100 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-semibold"
             >
               <Link href="/dashboard">
                 Akses Dashboard Gratis
@@ -375,7 +390,7 @@ export default function LandingPage() {
             <Button
               size="lg"
               variant="outline"
-              className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-amber-700 bg-transparent transition-all duration-300 shadow-lg hover:shadow-xl rounded-full"
+              className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-slate-700 bg-transparent transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-medium"
             >
               Hubungi Tim Kami
             </Button>

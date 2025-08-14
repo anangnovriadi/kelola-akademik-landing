@@ -20,28 +20,28 @@ export default function Navbar() {
   }
 
   return (
-    <header className="border-b bg-white/80 backdrop-blur-md sticky top-0 z-50 border-amber-300/50">
+    <header className="border-b bg-white/90 backdrop-blur-md sticky top-0 z-50 border-slate-200/50 transition-all duration-300">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <GraduationCap className="h-8 w-8 text-amber-700" />
-          <span className="text-2xl font-bold text-amber-900">Kelola Akademik</span>
+          <GraduationCap className="h-8 w-8 text-slate-600" />
+          <span className="text-2xl font-display font-bold text-slate-700">Kelola Akademik</span>
         </div>
         <nav className="hidden md:flex items-center space-x-8">
           <button
-            className="text-amber-800 hover:text-amber-900 transition-all duration-300"
+            className="text-slate-600 hover:text-slate-700 transition-all duration-300 font-medium"
             onClick={() => scrollToSection("features")}
           >
             Fitur
           </button>
           <button
-            className="text-amber-800 hover:text-amber-900 transition-all duration-300"
+            className="text-slate-600 hover:text-slate-700 transition-all duration-300 font-medium"
             onClick={() => scrollToSection("support")}
           >
             Dukung Kami
           </button>
           <Button
             asChild
-            className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white transition-all duration-300 shadow-lg hover:shadow-xl rounded-full px-6"
+            className="bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white transition-all duration-300 shadow-lg hover:shadow-xl rounded-full px-6 font-medium"
           >
             <Link href="/dashboard">
               Masuk Dashboard
