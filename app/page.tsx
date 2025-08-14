@@ -410,20 +410,6 @@ export default function LandingPage() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-slate-700 bg-transparent transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-medium"
-              asChild
-            >
-              <Link
-                href="https://wa.me/6285816203961?text=Halo%20tim%20Kelola%20Akademik,%0A%0ASaya%20tertarik%20dengan%20sistem%20ini%20dan%20ingin%20mengetahui%20lebih%20lanjut."
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Hubungi Developer
-              </Link>
-            </Button>
           </div>
         </div>
       </section>
