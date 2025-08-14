@@ -370,7 +370,7 @@ export default function LandingPage() {
             Bergabunglah dengan ratusan sekolah yang telah merasakan kemudahan mengelola administrasi akademik dengan
             Kelola Akademik.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
             <Button
               size="lg"
               variant="secondary"
@@ -381,13 +381,6 @@ export default function LandingPage() {
                 Akses Dashboard Gratis
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-slate-700 bg-transparent transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-medium"
-            >
-              Hubungi Tim Kami
             </Button>
           </div>
         </div>
