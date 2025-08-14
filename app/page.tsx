@@ -287,14 +287,14 @@ export default function LandingPage() {
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8">
               {/* Donation Card */}
-              <Card className="border-2 border-blue-200/50 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-md rounded-2xl">
+              <Card className="border-2 border-blue-200/50 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-md rounded-2xl flex flex-col">
                 <CardHeader className="text-center pb-6">
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300 hover:from-blue-200 hover:to-indigo-200">
                     <Coffee className="h-8 w-8 text-slate-600" />
                   </div>
                   <CardTitle className="text-2xl font-display font-semibold text-slate-800">Saweria</CardTitle>
                   <CardDescription className="text-slate-600 font-normal">
-                    Belikan kami kopi untuk semangat coding yang lebih tinggi. Donasi mulai dari Rp 5.000 sudah sangat
+                    Belikan kami kopi untuk semangat coding yang lebih tinggi. Donasi mulai dari Rp 10.000 sudah sangat
                     membantu kami untuk:
                   </CardDescription>
                 </CardHeader>
@@ -335,7 +335,7 @@ export default function LandingPage() {
               </Card>
 
               {/* Alternative Support Card */}
-              <Card className="border-2 border-slate-200/50 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-md rounded-2xl">
+              <Card className="border-2 border-slate-200/50 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-md rounded-2xl flex flex-col">
                 <CardHeader className="text-center pb-6">
                   <div className="w-16 h-16 bg-gradient-to-br from-slate-100 to-slate-200 rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300 hover:from-slate-200 hover:to-slate-300">
                     <Heart className="h-8 w-8 text-slate-600" />
@@ -347,8 +347,8 @@ export default function LandingPage() {
                     Tidak harus donasi, ada cara lain untuk membantu kami mengembangkan sistem ini:
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="text-center">
-                  <div className="mb-6">
+                <CardContent className="text-center flex flex-col h-full">
+                  <div className="mb-6 flex-grow">
                     <div className="bg-slate-50 rounded-xl p-4 mb-6">
                       <ul className="text-sm text-slate-600 space-y-3 text-left font-normal">
                         <li className="flex items-center">
@@ -365,7 +365,7 @@ export default function LandingPage() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="w-full bg-white/80 backdrop-blur-sm border-slate-300 text-slate-700 hover:bg-slate-50/90 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-medium"
+                    className="w-full bg-white/80 backdrop-blur-sm border-slate-300 text-slate-700 hover:bg-slate-50/90 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-medium mt-auto"
                     asChild
                   >
                     <Link
