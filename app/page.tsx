@@ -311,9 +311,12 @@ export default function LandingPage() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="w-full bg-white/80 backdrop-blur-sm border-slate-300 text-slate-700 hover:bg-slate-50/90 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-medium mt-auto cursor-pointer"
+                    asChild
+                    className="w-full bg-white/80 backdrop-blur-sm border-slate-300 text-slate-700 hover:bg-slate-50/90 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-medium mt-auto"
                   >
-                    Hubungi Developer
+                    <Link href="https://wa.me/6285816203961" target="_blank" rel="noopener noreferrer">
+                      Hubungi Developer
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>
