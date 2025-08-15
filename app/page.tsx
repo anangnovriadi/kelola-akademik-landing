@@ -124,7 +124,7 @@ export default function LandingPage() {
             Sistem Manajemen Akademik Terdepan
           </Badge>
 
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-slate-800 mb-6 leading-tight">
+          <h1 className="text-5xl md:text-6xl font-display font-bold text-slate-800 mb-6 leading-tight">
             <span className="animate-fade-in-up block">Kelola Akademik</span>
             <span className="text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text block animate-gradient-x animate-fade-in-up animation-delay-500">
               Lebih Mudah & Efisien
@@ -175,7 +175,7 @@ export default function LandingPage() {
               variant="outline"
               className="mb-4 border-slate-300 text-slate-700 bg-white/50 rounded-full px-4 py-2 font-medium"
             >
-              Interface Dashboard
+              Tampilan Dashboard
             </Badge>
             <h2 className="text-4xl font-display font-bold text-slate-800 mb-4">Tampilan Dashboard Kelola Akademik</h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto font-normal">
