@@ -16,12 +16,19 @@ import {
   Star,
   Zap,
   Shield,
+  Sparkles,
+  Award,
+  Target,
 } from "lucide-react"
 import Link from "next/link"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
+import { useEffect, useRef, useState } from "react"
 
 export default function LandingPage() {
+  const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set())
+  const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({})
+
   const features = [
     {
       icon: Users,
@@ -55,6 +62,26 @@ export default function LandingPage() {
       description: "Kustomisasi sistem sesuai kebutuhan sekolah dengan berbagai opsi konfigurasi.",
     },
   ]
+
+  // Intersection Observer for scroll animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleSections((prev) => new Set([...prev, entry.target.id]))
+          }
+        })
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -100px 0px" },
+    )
+
+    Object.values(sectionRefs.current).forEach((ref) => {
+      if (ref) observer.observe(ref)
+    })
+
+    return () => observer.disconnect()
+  }, [])
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -90,6 +117,12 @@ export default function LandingPage() {
           <div className="absolute top-40 left-1/2 animate-float-delayed">
             <CheckCircle className="h-5 w-5 text-emerald-400 opacity-60" />
           </div>
+          <div className="absolute bottom-20 right-10 animate-float">
+            <Sparkles className="h-6 w-6 text-purple-400 opacity-50" />
+          </div>
+          <div className="absolute top-60 right-1/3 animate-float-slow">
+            <Award className="h-5 w-5 text-yellow-400 opacity-60" />
+          </div>
         </div>
 
         <div className="container mx-auto text-center max-w-4xl relative z-10">
@@ -116,7 +149,7 @@ export default function LandingPage() {
             <Button
               size="lg"
               asChild
-              className="text-lg px-8 py-6 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-semibold hover:scale-105 transform"
+              className="text-lg px-8 py-6 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-semibold"
             >
               <Link href="/dashboard">
                 Mulai Sekarang
@@ -126,7 +159,7 @@ export default function LandingPage() {
             <Button
               size="lg"
               variant="outline"
-              className="text-lg px-8 py-6 bg-white/80 backdrop-blur-sm border-slate-300 text-slate-700 hover:bg-slate-50/90 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-medium cursor-pointer hover:scale-105 transform"
+              className="text-lg px-8 py-6 bg-white/80 backdrop-blur-sm border-slate-300 text-slate-700 hover:bg-slate-50/90 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-medium cursor-pointer"
               onClick={() => scrollToSection("dashboard-preview")}
             >
               Lihat Tampilan Dashboard
@@ -136,9 +169,27 @@ export default function LandingPage() {
       </section>
 
       {/* Dashboard Preview Section */}
-      <section id="dashboard-preview" className="py-20 px-4 bg-white/60 backdrop-blur-sm">
-        <div className="container mx-auto">
-          <div className="text-center mb-12">
+      <section
+        id="dashboard-preview"
+        ref={(el) => (sectionRefs.current["dashboard-preview"] = el)}
+        className="py-20 px-4 bg-white/60 backdrop-blur-sm relative"
+      >
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-10 right-20 animate-pulse">
+            <Target className="h-12 w-12 text-blue-200 opacity-30" />
+          </div>
+          <div className="absolute bottom-20 left-10 animate-bounce-slow">
+            <Sparkles className="h-10 w-10 text-indigo-200 opacity-40" />
+          </div>
+        </div>
+
+        <div className="container mx-auto relative z-10">
+          <div
+            className={`text-center mb-12 transition-all duration-1000 ${
+              visibleSections.has("dashboard-preview") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
+          >
             <Badge
               variant="outline"
               className="mb-4 border-slate-300 text-slate-700 bg-white/50 rounded-full px-4 py-2 font-medium"
@@ -153,37 +204,55 @@ export default function LandingPage() {
 
           <div className="max-w-7xl mx-auto space-y-8">
             {/* Row 1 - Single Dashboard Overview */}
-            <div className="max-w-7xl mx-auto">
+            <div
+              className={`max-w-7xl mx-auto transition-all duration-1000 delay-300 ${
+                visibleSections.has("dashboard-preview")
+                  ? "opacity-100 translate-y-0 scale-100"
+                  : "opacity-0 translate-y-10 scale-95"
+              }`}
+            >
               <img
                 src="/presensi.png"
                 alt="Dashboard Sistem Presensi Kelola Akademik - Interface lengkap untuk pencatatan kehadiran siswa"
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500 rounded-lg"
               />
             </div>
 
             {/* Row 2 - Two Dashboards Side by Side */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Dashboard Analytics */}
-              <div className="max-w-full mx-auto">
+              <div
+                className={`max-w-full mx-auto transition-all duration-1000 delay-500 ${
+                  visibleSections.has("dashboard-preview") ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+                }`}
+              >
                 <img
                   src="/dashboard.png"
                   alt="Dashboard Analytics Kelola Akademik - Grafik statistik siswa dan rekap presensi"
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500 rounded-lg"
                 />
               </div>
 
               {/* Rekap Presensi Dashboard */}
-              <div className="max-w-full mx-auto">
+              <div
+                className={`max-w-full mx-auto transition-all duration-1000 delay-700 ${
+                  visibleSections.has("dashboard-preview") ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+                }`}
+              >
                 <img
                   src="/rekap.png"
                   alt="Rekap Presensi Kelola Akademik - Tabel laporan kehadiran siswa dengan data lengkap"
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500 rounded-lg"
                 />
               </div>
             </div>
           </div>
 
-          <div className="text-center mt-12">
+          <div
+            className={`text-center mt-12 transition-all duration-1000 delay-1000 ${
+              visibleSections.has("dashboard-preview") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
+          >
             <Button
               size="lg"
               asChild
@@ -199,9 +268,30 @@ export default function LandingPage() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 px-4 bg-white/80 backdrop-blur-sm">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
+      <section
+        id="features"
+        ref={(el) => (sectionRefs.current["features"] = el)}
+        className="py-20 px-4 bg-white/80 backdrop-blur-sm relative"
+      >
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 animate-spin-slow">
+            <Settings className="h-16 w-16 text-slate-200 opacity-20" />
+          </div>
+          <div className="absolute bottom-10 right-20 animate-pulse">
+            <BarChart3 className="h-14 w-14 text-blue-200 opacity-25" />
+          </div>
+          <div className="absolute top-1/2 right-10 animate-float">
+            <Users className="h-12 w-12 text-indigo-200 opacity-30" />
+          </div>
+        </div>
+
+        <div className="container mx-auto relative z-10">
+          <div
+            className={`text-center mb-16 transition-all duration-1000 ${
+              visibleSections.has("features") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
+          >
             <Badge
               variant="outline"
               className="mb-4 border-slate-300 text-slate-700 bg-white/50 rounded-full px-4 py-2 font-medium"
@@ -220,10 +310,15 @@ export default function LandingPage() {
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className="border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-slate-200/50 bg-white/90 backdrop-blur-md rounded-2xl group"
+                className={`border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-slate-200/50 bg-white/90 backdrop-blur-md rounded-2xl group ${
+                  visibleSections.has("features") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                }`}
+                style={{
+                  transitionDelay: visibleSections.has("features") ? `${index * 100}ms` : "0ms",
+                }}
               >
                 <CardHeader>
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl flex items-center justify-center mb-4 transition-all duration-300 group-hover:from-blue-200 group-hover:to-indigo-200">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl flex items-center justify-center mb-4 transition-all duration-300 group-hover:from-blue-200 group-hover:to-indigo-200 group-hover:scale-110">
                     <feature.icon className="h-6 w-6 text-slate-600" />
                   </div>
                   <CardTitle className="text-xl font-display font-semibold text-slate-800">{feature.title}</CardTitle>
@@ -240,9 +335,30 @@ export default function LandingPage() {
       </section>
 
       {/* Support Developer Section */}
-      <section id="support" className="py-20 px-4 bg-white/90 backdrop-blur-sm">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
+      <section
+        id="support"
+        ref={(el) => (sectionRefs.current["support"] = el)}
+        className="py-20 px-4 bg-white/90 backdrop-blur-sm relative"
+      >
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-10 left-1/4 animate-bounce-slow">
+            <Heart className="h-10 w-10 text-pink-200 opacity-40" />
+          </div>
+          <div className="absolute bottom-20 right-1/4 animate-pulse">
+            <Coffee className="h-12 w-12 text-amber-200 opacity-30" />
+          </div>
+          <div className="absolute top-1/2 left-10 animate-float-delayed">
+            <Star className="h-8 w-8 text-yellow-200 opacity-50" />
+          </div>
+        </div>
+
+        <div className="container mx-auto relative z-10">
+          <div
+            className={`text-center mb-16 transition-all duration-1000 ${
+              visibleSections.has("support") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
+          >
             <Badge
               variant="outline"
               className="mb-4 border-slate-300 text-slate-700 bg-white/50 rounded-full px-4 py-2 font-medium"
@@ -259,9 +375,14 @@ export default function LandingPage() {
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8">
               {/* Donation Card */}
-              <Card className="border-2 border-blue-200/50 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-md rounded-2xl flex flex-col">
+              <Card
+                className={`border-2 border-blue-200/50 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-md rounded-2xl flex flex-col hover:scale-105 ${
+                  visibleSections.has("support") ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+                }`}
+                style={{ transitionDelay: visibleSections.has("support") ? "200ms" : "0ms" }}
+              >
                 <CardHeader className="text-center pb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300 hover:from-blue-200 hover:to-indigo-200">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300 hover:from-blue-200 hover:to-indigo-200 hover:scale-110">
                     <Coffee className="h-8 w-8 text-slate-600" />
                   </div>
                   <CardTitle className="text-2xl font-display font-semibold text-slate-800">Saweria</CardTitle>
@@ -303,9 +424,14 @@ export default function LandingPage() {
               </Card>
 
               {/* Alternative Support Card */}
-              <Card className="border-2 border-slate-200/50 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-md rounded-2xl flex flex-col">
+              <Card
+                className={`border-2 border-slate-200/50 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-md rounded-2xl flex flex-col hover:scale-105 ${
+                  visibleSections.has("support") ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+                }`}
+                style={{ transitionDelay: visibleSections.has("support") ? "400ms" : "0ms" }}
+              >
                 <CardHeader className="text-center pb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-slate-100 to-slate-200 rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300 hover:from-slate-200 hover:to-slate-300">
+                  <div className="w-16 h-16 bg-gradient-to-br from-slate-100 to-slate-200 rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300 hover:from-slate-200 hover:to-slate-300 hover:scale-110">
                     <Heart className="h-8 w-8 text-slate-600" />
                   </div>
                   <CardTitle className="text-2xl font-display font-semibold text-slate-800">
@@ -344,8 +470,12 @@ export default function LandingPage() {
               </Card>
             </div>
 
-            <div className="text-center mt-12">
-              <div className="bg-gradient-to-r from-slate-100/90 to-blue-100/90 backdrop-blur-sm rounded-2xl p-8 border border-slate-200/50">
+            <div
+              className={`text-center mt-12 transition-all duration-1000 delay-600 ${
+                visibleSections.has("support") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              }`}
+            >
+              <div className="bg-gradient-to-r from-slate-100/90 to-blue-100/90 backdrop-blur-sm rounded-2xl p-8 border border-slate-200/50 hover:scale-105 transition-transform duration-300">
                 <h3 className="text-2xl font-display font-bold text-slate-800 mb-4">Terima Kasih! 🙏</h3>
                 <p className="text-slate-600 max-w-2xl mx-auto font-normal">
                   Setiap dukungan dari Anda, baik berupa donasi, review, atau rekomendasi, sangat berarti bagi kami.
@@ -358,19 +488,34 @@ export default function LandingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-slate-600 to-slate-700 text-white">
-        <div className="container mx-auto text-center max-w-3xl">
-          <h2 className="text-4xl font-display font-bold mb-6">Siap Meningkatkan Efisiensi Sekolah Anda?</h2>
-          <p className="text-xl opacity-90 mb-8 font-normal">
+      <section className="py-20 px-4 bg-gradient-to-r from-slate-600 to-slate-700 text-white relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-10 left-10 animate-float">
+            <Sparkles className="h-8 w-8 text-white opacity-20" />
+          </div>
+          <div className="absolute bottom-10 right-10 animate-float-delayed">
+            <Star className="h-10 w-10 text-white opacity-15" />
+          </div>
+          <div className="absolute top-1/2 left-1/4 animate-pulse">
+            <Target className="h-6 w-6 text-white opacity-25" />
+          </div>
+        </div>
+
+        <div className="container mx-auto text-center max-w-3xl relative z-10">
+          <h2 className="text-4xl font-display font-bold mb-6 animate-fade-in-up">
+            Siap Meningkatkan Efisiensi Sekolah Anda?
+          </h2>
+          <p className="text-xl opacity-90 mb-8 font-normal animate-fade-in-up animation-delay-300">
             Bergabunglah dengan ratusan sekolah yang telah merasakan kemudahan mengelola administrasi akademik dengan
             Kelola Akademik.
           </p>
-          <div className="flex justify-center">
+          <div className="flex justify-center animate-fade-in-up animation-delay-500">
             <Button
               size="lg"
               variant="secondary"
               asChild
-              className="text-lg px-8 py-6 bg-white text-slate-800 hover:bg-slate-100 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-semibold"
+              className="text-lg px-8 py-6 bg-white text-slate-800 hover:bg-slate-100 hover:text-slate-900 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-semibold"
             >
               <Link href="/dashboard">
                 Akses Dashboard Gratis
