@@ -66,9 +66,9 @@ export default function Navbar() {
       {/* Mobile menu dropdown */}
       {isMobileMenuOpen && (
         <div className="md:hidden border-t border-slate-200/50 bg-white/95 backdrop-blur-md">
-          <div className="container mx-auto px-4 py-4 space-y-4">
+          <div className="container mx-auto px-4 py-4">
             <button
-              className="block w-full text-left text-slate-600 hover:text-slate-700 transition-all duration-300 font-medium py-2 text-sm"
+              className="block w-full text-center text-slate-600 hover:text-slate-700 transition-all duration-300 font-medium py-2 text-sm"
               onClick={() => {
                 scrollToSection("features")
                 setIsMobileMenuOpen(false)
@@ -77,7 +77,7 @@ export default function Navbar() {
               Fitur
             </button>
             <button
-              className="block w-full text-left text-slate-600 hover:text-slate-700 transition-all duration-300 font-medium py-2 text-sm"
+              className="block w-full text-center text-slate-600 hover:text-slate-700 transition-all duration-300 font-medium py-2 text-sm"
               onClick={() => {
                 scrollToSection("support")
                 setIsMobileMenuOpen(false)
@@ -88,7 +88,7 @@ export default function Navbar() {
             <Button
               asChild
               size="sm"
-              className="w-full bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white transition-all duration-300 shadow-lg hover:shadow-xl rounded-full px-4 font-medium text-sm"
+              className="mt-2 mb-2.5 w-full bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white transition-all duration-300 shadow-lg hover:shadow-xl rounded-full px-4 font-medium text-sm"
             >
               <Link href="/dashboard">
                 Masuk Dashboard

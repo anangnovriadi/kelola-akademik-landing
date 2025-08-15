@@ -116,9 +116,9 @@ export default function LandingPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-40 pb-32 px-4 relative">
+      <section className="pt-32 pb-18 md:pt-52 md:pb-46 px-4 relative">
         <div className="container mx-auto text-center max-w-4xl relative z-10">
-          <h1 className="text-5xl md:text-6xl font-display font-bold text-slate-800 mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-display font-bold text-slate-800 mb-6 leading-tight">
             <span className="block">Kelola Akademik</span>
             <span className="text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text block">
               Lebih Mudah & Efisien
@@ -134,7 +134,7 @@ export default function LandingPage() {
             <Button
               size="lg"
               asChild
-              className="text-lg px-8 py-6 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-semibold"
+              className="text-lg w-full md:w-60 px-8 py-6 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-semibold"
             >
               <Link href="/dashboard">
                 Mulai Sekarang
@@ -143,8 +143,8 @@ export default function LandingPage() {
             </Button>
             <Button
               size="lg"
-              variant="outline"
-              className="text-lg px-8 py-6 bg-white/80 backdrop-blur-sm border-slate-300 text-slate-700 hover:bg-slate-50/90 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-medium cursor-pointer"
+              variant="secondary"
+              className="text-lg px-8 py-6 bg-white text-slate-800 hover:bg-slate-100 hover:text-slate-900 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-semibold cursor-pointer"
               onClick={() => scrollToSection("dashboard-preview")}
             >
               Lihat Tampilan Dashboard
@@ -451,7 +451,7 @@ export default function LandingPage() {
               size="lg"
               variant="secondary"
               asChild
-              className="text-lg px-8 py-6 bg-white text-slate-800 hover:bg-slate-100 hover:text-slate-900 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-semibold"
+              className="text-lg w-60 px-8 py-6 bg-white text-slate-800 hover:bg-slate-100 hover:text-slate-900 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-semibold"
             >
               <Link href="/dashboard">
                 Akses Dashboard
