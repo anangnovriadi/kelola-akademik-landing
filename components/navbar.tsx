@@ -1,10 +1,12 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { GraduationCap, ArrowRight } from "lucide-react"
+import { GraduationCap, ArrowRight, Menu, X } from "lucide-react"
 import Link from "next/link"
+import { useState } from "react"
 
 export default function Navbar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
@@ -49,7 +51,51 @@ export default function Navbar() {
             </Link>
           </Button>
         </nav>
+
+        {/* Mobile menu button */}
+        <button
+          className="md:hidden p-2 text-slate-600 hover:text-slate-700 transition-colors"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle mobile menu"
+        >
+          {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
       </div>
+
+      {/* Mobile menu dropdown */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden border-t border-slate-200/50 bg-white/95 backdrop-blur-md">
+          <div className="container mx-auto px-4 py-4 space-y-4">
+            <button
+              className="block w-full text-left text-slate-600 hover:text-slate-700 transition-all duration-300 font-medium py-2"
+              onClick={() => {
+                scrollToSection("features")
+                setIsMobileMenuOpen(false)
+              }}
+            >
+              Fitur
+            </button>
+            <button
+              className="block w-full text-left text-slate-600 hover:text-slate-700 transition-all duration-300 font-medium py-2"
+              onClick={() => {
+                scrollToSection("support")
+                setIsMobileMenuOpen(false)
+              }}
+            >
+              Dukung Kami
+            </button>
+            <Button
+              asChild
+              className="w-full bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white transition-all duration-300 shadow-lg hover:shadow-xl rounded-full px-6 font-medium"
+            >
+              <Link href="/dashboard">
+                Masuk Dashboard
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      )}
     </header>
   )
 }
