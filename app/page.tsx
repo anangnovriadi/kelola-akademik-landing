@@ -119,24 +119,24 @@ export default function LandingPage() {
         <div className="container mx-auto text-center max-w-4xl relative z-10">
           <Badge
             variant="secondary"
-            className="mb-4 bg-gradient-to-r from-blue-100 to-indigo-100 text-slate-700 border-none rounded-full px-4 py-2 font-medium animate-fade-in-up"
+            className="mb-4 bg-gradient-to-r from-blue-100 to-indigo-100 text-slate-700 border-none rounded-full px-4 py-2 font-medium"
           >
             Sistem Manajemen Akademik Terdepan
           </Badge>
 
           <h1 className="text-5xl md:text-6xl font-display font-bold text-slate-800 mb-6 leading-tight">
-            <span className="animate-fade-in-up block">Kelola Akademik</span>
-            <span className="text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text block animate-gradient-x animate-fade-in-up animation-delay-500">
+            <span className="block">Kelola Akademik</span>
+            <span className="text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text block">
               Lebih Mudah & Efisien
             </span>
           </h1>
 
-          <p className="text-xl text-slate-600 mb-8 leading-relaxed font-normal animate-fade-in-up animation-delay-700">
+          <p className="text-xl text-slate-600 mb-8 leading-relaxed font-normal">
             Platform manajemen akademik all-in-one yang membantu sekolah mengelola siswa, presensi, dan administrasi
             dengan lebih efektif dan terorganisir.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-1000">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
               asChild
