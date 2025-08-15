@@ -376,7 +376,7 @@ export default function LandingPage() {
             <div className="grid md:grid-cols-2 gap-8">
               {/* Donation Card */}
               <Card
-                className={`border-2 border-blue-200/50 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-md rounded-2xl flex flex-col ${
+                className={`border-2 border-blue-200/50 hover:border-blue-300/70 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-md rounded-2xl flex flex-col ${
                   visibleSections.has("support") ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
                 }`}
                 style={{ transitionDelay: visibleSections.has("support") ? "200ms" : "0ms" }}
@@ -425,7 +425,7 @@ export default function LandingPage() {
 
               {/* Alternative Support Card */}
               <Card
-                className={`border-2 border-slate-200/50 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-md rounded-2xl flex flex-col ${
+                className={`border-2 border-slate-200/50 hover:border-slate-300/70 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-md rounded-2xl flex flex-col ${
                   visibleSections.has("support") ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
                 }`}
                 style={{ transitionDelay: visibleSections.has("support") ? "400ms" : "0ms" }}
