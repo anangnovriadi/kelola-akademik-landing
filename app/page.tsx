@@ -13,6 +13,9 @@ import {
   ArrowRight,
   Heart,
   Coffee,
+  Star,
+  Zap,
+  Shield,
 } from "lucide-react"
 import Link from "next/link"
 import Navbar from "@/components/navbar"
@@ -68,33 +71,52 @@ export default function LandingPage() {
   }
 
   return (
-    <div className="min-h-screen scroll-smooth transition-all duration-300 main-bg-light">
+    <div className="min-h-screen scroll-smooth transition-all duration-300 main-bg-light overflow-hidden">
       <Navbar />
 
       {/* Hero Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto text-center max-w-4xl">
+      <section className="py-20 px-4 relative">
+        {/* Floating Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 animate-float">
+            <Star className="h-6 w-6 text-blue-400 opacity-60" />
+          </div>
+          <div className="absolute top-32 right-20 animate-float-delayed">
+            <Zap className="h-8 w-8 text-indigo-400 opacity-50" />
+          </div>
+          <div className="absolute bottom-32 left-20 animate-float-slow">
+            <Shield className="h-7 w-7 text-slate-400 opacity-40" />
+          </div>
+          <div className="absolute top-40 left-1/2 animate-float-delayed">
+            <CheckCircle className="h-5 w-5 text-emerald-400 opacity-60" />
+          </div>
+        </div>
+
+        <div className="container mx-auto text-center max-w-4xl relative z-10">
           <Badge
             variant="secondary"
-            className="mb-4 bg-gradient-to-r from-blue-100 to-indigo-100 text-slate-700 border-none rounded-full px-4 py-2 font-medium"
+            className="mb-4 bg-gradient-to-r from-blue-100 to-indigo-100 text-slate-700 border-none rounded-full px-4 py-2 font-medium animate-fade-in-up"
           >
             Sistem Manajemen Akademik Terdepan
           </Badge>
+
           <h1 className="text-5xl md:text-6xl font-display font-bold text-slate-800 mb-6 leading-tight">
-            Kelola Akademik
-            <span className="text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text block">
+            <span className="animate-fade-in-up block">Kelola Akademik</span>
+            <span className="text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text block animate-gradient-x animate-fade-in-up animation-delay-500">
               Lebih Mudah & Efisien
             </span>
           </h1>
-          <p className="text-xl text-slate-600 mb-8 leading-relaxed font-normal">
+
+          <p className="text-xl text-slate-600 mb-8 leading-relaxed font-normal animate-fade-in-up animation-delay-700">
             Platform manajemen akademik all-in-one yang membantu sekolah mengelola siswa, presensi, dan administrasi
             dengan lebih efektif dan terorganisir.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-1000">
             <Button
               size="lg"
               asChild
-              className="text-lg px-8 py-6 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-semibold"
+              className="text-lg px-8 py-6 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-semibold hover:scale-105 transform"
             >
               <Link href="/dashboard">
                 Mulai Sekarang
@@ -104,7 +126,7 @@ export default function LandingPage() {
             <Button
               size="lg"
               variant="outline"
-              className="text-lg px-8 py-6 bg-white/80 backdrop-blur-sm border-slate-300 text-slate-700 hover:bg-slate-50/90 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-medium cursor-pointer"
+              className="text-lg px-8 py-6 bg-white/80 backdrop-blur-sm border-slate-300 text-slate-700 hover:bg-slate-50/90 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-medium cursor-pointer hover:scale-105 transform"
               onClick={() => scrollToSection("dashboard-preview")}
             >
               Lihat Tampilan Dashboard
