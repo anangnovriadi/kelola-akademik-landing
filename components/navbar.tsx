@@ -23,7 +23,7 @@ export default function Navbar() {
 
   return (
     <header className="border-b bg-white/90 backdrop-blur-md sticky top-0 z-50 border-slate-200/50 transition-all duration-300">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="container mx-auto py-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <GraduationCap className="h-8 w-8 text-slate-600" />
           <span className="text-xl font-display font-bold text-slate-700">Kelola Akademik</span>
@@ -66,7 +66,7 @@ export default function Navbar() {
       {/* Mobile menu dropdown */}
       {isMobileMenuOpen && (
         <div className="md:hidden border-t border-slate-200/50 bg-white/95 backdrop-blur-md">
-          <div className="container mx-auto px-4 py-4 space-y-4">
+          <div className="container mx-auto py-4 space-y-4">
             <button
               className="block w-full text-left text-slate-600 hover:text-slate-700 transition-all duration-300 font-medium py-2 text-sm"
               onClick={() => {
