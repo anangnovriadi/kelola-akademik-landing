@@ -26,28 +26,29 @@ export default function Navbar() {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <GraduationCap className="h-8 w-8 text-slate-600" />
-          <span className="text-2xl font-display font-bold text-slate-700">Kelola Akademik</span>
+          <span className="text-xl font-display font-bold text-slate-700">Kelola Akademik</span>
         </div>
         <nav className="hidden md:flex items-center space-x-8">
           <button
-            className="text-slate-600 hover:text-slate-700 transition-all duration-300 font-medium cursor-pointer"
+            className="text-slate-600 hover:text-slate-700 transition-all duration-300 font-medium cursor-pointer text-sm"
             onClick={() => scrollToSection("features")}
           >
             Fitur
           </button>
           <button
-            className="text-slate-600 hover:text-slate-700 transition-all duration-300 font-medium cursor-pointer"
+            className="text-slate-600 hover:text-slate-700 transition-all duration-300 font-medium cursor-pointer text-sm"
             onClick={() => scrollToSection("support")}
           >
             Dukung Kami
           </button>
           <Button
             asChild
-            className="bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white transition-all duration-300 shadow-lg hover:shadow-xl rounded-full px-6 font-medium"
+            size="sm"
+            className="bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white transition-all duration-300 shadow-lg hover:shadow-xl rounded-full px-4 font-medium text-sm"
           >
             <Link href="/dashboard">
               Masuk Dashboard
-              <ArrowRight className="ml-2 h-4 w-4" />
+              <ArrowRight className="ml-2 h-3 w-3" />
             </Link>
           </Button>
         </nav>
@@ -67,7 +68,7 @@ export default function Navbar() {
         <div className="md:hidden border-t border-slate-200/50 bg-white/95 backdrop-blur-md">
           <div className="container mx-auto px-4 py-4 space-y-4">
             <button
-              className="block w-full text-left text-slate-600 hover:text-slate-700 transition-all duration-300 font-medium py-2"
+              className="block w-full text-left text-slate-600 hover:text-slate-700 transition-all duration-300 font-medium py-2 text-sm"
               onClick={() => {
                 scrollToSection("features")
                 setIsMobileMenuOpen(false)
@@ -76,7 +77,7 @@ export default function Navbar() {
               Fitur
             </button>
             <button
-              className="block w-full text-left text-slate-600 hover:text-slate-700 transition-all duration-300 font-medium py-2"
+              className="block w-full text-left text-slate-600 hover:text-slate-700 transition-all duration-300 font-medium py-2 text-sm"
               onClick={() => {
                 scrollToSection("support")
                 setIsMobileMenuOpen(false)
@@ -86,11 +87,12 @@ export default function Navbar() {
             </button>
             <Button
               asChild
-              className="w-full bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white transition-all duration-300 shadow-lg hover:shadow-xl rounded-full px-6 font-medium"
+              size="sm"
+              className="w-full bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white transition-all duration-300 shadow-lg hover:shadow-xl rounded-full px-4 font-medium text-sm"
             >
               <Link href="/dashboard">
                 Masuk Dashboard
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <ArrowRight className="ml-2 h-3 w-3" />
               </Link>
             </Button>
           </div>
