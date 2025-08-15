@@ -116,7 +116,7 @@ export default function LandingPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="py-20 px-4 relative">
+      <section className="py-32 px-4 relative">
         <div className="container mx-auto text-center max-w-4xl relative z-10">
           <h1 className="text-5xl md:text-6xl font-display font-bold text-slate-800 mb-6 leading-tight">
             <span className="block">Kelola Akademik</span>
