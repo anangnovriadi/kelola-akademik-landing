@@ -116,7 +116,7 @@ export default function LandingPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="py-32 px-4 relative">
+      <section className="pt-40 pb-32 px-4 relative">
         <div className="container mx-auto text-center max-w-4xl relative z-10">
           <h1 className="text-5xl md:text-6xl font-display font-bold text-slate-800 mb-6 leading-tight">
             <span className="block">Kelola Akademik</span>
@@ -157,7 +157,7 @@ export default function LandingPage() {
       <section
         id="dashboard-preview"
         ref={(el) => (sectionRefs.current["dashboard-preview"] = el)}
-        className="py-20 px-4 bg-white/60 backdrop-blur-sm relative"
+        className="pt-20 pb-32 px-4 bg-white/60 backdrop-blur-sm relative"
       >
         <div className="container mx-auto relative z-10">
           <div
@@ -246,7 +246,7 @@ export default function LandingPage() {
       <section
         id="features"
         ref={(el) => (sectionRefs.current["features"] = el)}
-        className="py-20 px-4 bg-white/80 backdrop-blur-sm relative"
+        className="pt-20 pb-32 px-4 bg-white/80 backdrop-blur-sm relative"
       >
         <div className="container mx-auto relative z-10">
           <div
@@ -300,7 +300,7 @@ export default function LandingPage() {
       <section
         id="support"
         ref={(el) => (sectionRefs.current["support"] = el)}
-        className="py-20 px-4 bg-white/90 backdrop-blur-sm relative"
+        className="pt-20 pb-32 px-4 bg-white/90 backdrop-blur-sm relative"
       >
         <div className="container mx-auto relative z-10">
           <div
@@ -437,7 +437,7 @@ export default function LandingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-slate-600 to-slate-700 text-white relative overflow-hidden">
+      <section className="pt-20 pb-32 px-4 bg-gradient-to-r from-slate-600 to-slate-700 text-white relative overflow-hidden">
         <div className="container mx-auto text-center max-w-3xl relative z-10">
           <h2 className="text-4xl font-display font-bold mb-6 animate-fade-in-up">
             Siap Meningkatkan Efisiensi Sekolah Anda?
