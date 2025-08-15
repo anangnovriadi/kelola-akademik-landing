@@ -376,7 +376,7 @@ export default function LandingPage() {
             <div className="grid md:grid-cols-2 gap-8">
               {/* Donation Card */}
               <Card
-                className={`border-2 border-blue-200/50 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-md rounded-2xl flex flex-col hover:scale-105 ${
+                className={`border-2 border-blue-200/50 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-md rounded-2xl flex flex-col ${
                   visibleSections.has("support") ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
                 }`}
                 style={{ transitionDelay: visibleSections.has("support") ? "200ms" : "0ms" }}
@@ -425,7 +425,7 @@ export default function LandingPage() {
 
               {/* Alternative Support Card */}
               <Card
-                className={`border-2 border-slate-200/50 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-md rounded-2xl flex flex-col hover:scale-105 ${
+                className={`border-2 border-slate-200/50 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-md rounded-2xl flex flex-col ${
                   visibleSections.has("support") ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
                 }`}
                 style={{ transitionDelay: visibleSections.has("support") ? "400ms" : "0ms" }}
@@ -475,7 +475,7 @@ export default function LandingPage() {
                 visibleSections.has("support") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}
             >
-              <div className="bg-gradient-to-r from-slate-100/90 to-blue-100/90 backdrop-blur-sm rounded-2xl p-8 border border-slate-200/50 hover:scale-105 transition-transform duration-300">
+              <div className="bg-gradient-to-r from-slate-100/90 to-blue-100/90 backdrop-blur-sm rounded-2xl p-8 border border-slate-200/50 transition-all duration-300">
                 <h3 className="text-2xl font-display font-bold text-slate-800 mb-4">Terima Kasih! 🙏</h3>
                 <p className="text-slate-600 max-w-2xl mx-auto font-normal">
                   Setiap dukungan dari Anda, baik berupa donasi, review, atau rekomendasi, sangat berarti bagi kami.
