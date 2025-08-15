@@ -1,8 +1,9 @@
 "use client"
 
+import { Badge } from "@/components/ui/badge"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import {
   Users,
   Calendar,
@@ -117,13 +118,6 @@ export default function LandingPage() {
       {/* Hero Section */}
       <section className="py-20 px-4 relative">
         <div className="container mx-auto text-center max-w-4xl relative z-10">
-          <Badge
-            variant="secondary"
-            className="mb-4 bg-gradient-to-r from-blue-100 to-indigo-100 text-slate-700 border-none rounded-full px-4 py-2 font-medium"
-          >
-            Sistem Manajemen Akademik Terdepan
-          </Badge>
-
           <h1 className="text-5xl md:text-6xl font-display font-bold text-slate-800 mb-6 leading-tight">
             <span className="block">Kelola Akademik</span>
             <span className="text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text block">
