@@ -9,7 +9,7 @@ export default function Footer() {
             <GraduationCap className="h-6 w-6 text-slate-300" />
             <span className="text-xl font-display font-semibold text-white">Kelola Akademik</span>
           </div>
-          <p className="text-slate-300 font-normal">&copy; 2025 Kelola Akademik, All rights reserved</p>
+          <p className="text-slate-300 font-normal text-sm">&copy; 2025 Kelola Akademik, All rights reserved</p>
         </div>
       </div>
     </footer>
