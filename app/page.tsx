@@ -13,12 +13,6 @@ import {
   ArrowRight,
   Heart,
   Coffee,
-  Star,
-  Zap,
-  Shield,
-  Sparkles,
-  Award,
-  Target,
 } from "lucide-react"
 import Link from "next/link"
 import Navbar from "@/components/navbar"
@@ -103,28 +97,6 @@ export default function LandingPage() {
 
       {/* Hero Section */}
       <section className="py-20 px-4 relative">
-        {/* Floating Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-10 animate-float">
-            <Star className="h-6 w-6 text-blue-400 opacity-60" />
-          </div>
-          <div className="absolute top-32 right-20 animate-float-delayed">
-            <Zap className="h-8 w-8 text-indigo-400 opacity-50" />
-          </div>
-          <div className="absolute bottom-32 left-20 animate-float-slow">
-            <Shield className="h-7 w-7 text-slate-400 opacity-40" />
-          </div>
-          <div className="absolute top-40 left-1/2 animate-float-delayed">
-            <CheckCircle className="h-5 w-5 text-emerald-400 opacity-60" />
-          </div>
-          <div className="absolute bottom-20 right-10 animate-float">
-            <Sparkles className="h-6 w-6 text-purple-400 opacity-50" />
-          </div>
-          <div className="absolute top-60 right-1/3 animate-float-slow">
-            <Award className="h-5 w-5 text-yellow-400 opacity-60" />
-          </div>
-        </div>
-
         <div className="container mx-auto text-center max-w-4xl relative z-10">
           <Badge
             variant="secondary"
@@ -174,16 +146,6 @@ export default function LandingPage() {
         ref={(el) => (sectionRefs.current["dashboard-preview"] = el)}
         className="py-20 px-4 bg-white/60 backdrop-blur-sm relative"
       >
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-10 right-20 animate-pulse">
-            <Target className="h-12 w-12 text-blue-200 opacity-30" />
-          </div>
-          <div className="absolute bottom-20 left-10 animate-bounce-slow">
-            <Sparkles className="h-10 w-10 text-indigo-200 opacity-40" />
-          </div>
-        </div>
-
         <div className="container mx-auto relative z-10">
           <div
             className={`text-center mb-12 transition-all duration-1000 ${
@@ -273,19 +235,6 @@ export default function LandingPage() {
         ref={(el) => (sectionRefs.current["features"] = el)}
         className="py-20 px-4 bg-white/80 backdrop-blur-sm relative"
       >
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-10 animate-spin-slow">
-            <Settings className="h-16 w-16 text-slate-200 opacity-20" />
-          </div>
-          <div className="absolute bottom-10 right-20 animate-pulse">
-            <BarChart3 className="h-14 w-14 text-blue-200 opacity-25" />
-          </div>
-          <div className="absolute top-1/2 right-10 animate-float">
-            <Users className="h-12 w-12 text-indigo-200 opacity-30" />
-          </div>
-        </div>
-
         <div className="container mx-auto relative z-10">
           <div
             className={`text-center mb-16 transition-all duration-1000 ${
@@ -318,7 +267,7 @@ export default function LandingPage() {
                 }}
               >
                 <CardHeader>
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl flex items-center justify-center mb-4 transition-all duration-300 group-hover:from-blue-200 group-hover:to-indigo-200 group-hover:scale-110">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl flex items-center justify-center mb-4">
                     <feature.icon className="h-6 w-6 text-slate-600" />
                   </div>
                   <CardTitle className="text-xl font-display font-semibold text-slate-800">{feature.title}</CardTitle>
@@ -340,19 +289,6 @@ export default function LandingPage() {
         ref={(el) => (sectionRefs.current["support"] = el)}
         className="py-20 px-4 bg-white/90 backdrop-blur-sm relative"
       >
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-10 left-1/4 animate-bounce-slow">
-            <Heart className="h-10 w-10 text-pink-200 opacity-40" />
-          </div>
-          <div className="absolute bottom-20 right-1/4 animate-pulse">
-            <Coffee className="h-12 w-12 text-amber-200 opacity-30" />
-          </div>
-          <div className="absolute top-1/2 left-10 animate-float-delayed">
-            <Star className="h-8 w-8 text-yellow-200 opacity-50" />
-          </div>
-        </div>
-
         <div className="container mx-auto relative z-10">
           <div
             className={`text-center mb-16 transition-all duration-1000 ${
@@ -382,7 +318,7 @@ export default function LandingPage() {
                 style={{ transitionDelay: visibleSections.has("support") ? "200ms" : "0ms" }}
               >
                 <CardHeader className="text-center pb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300 hover:from-blue-200 hover:to-indigo-200 hover:scale-110">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Coffee className="h-8 w-8 text-slate-600" />
                   </div>
                   <CardTitle className="text-2xl font-display font-semibold text-slate-800">Saweria</CardTitle>
@@ -431,7 +367,7 @@ export default function LandingPage() {
                 style={{ transitionDelay: visibleSections.has("support") ? "400ms" : "0ms" }}
               >
                 <CardHeader className="text-center pb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-slate-100 to-slate-200 rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300 hover:from-slate-200 hover:to-slate-300 hover:scale-110">
+                  <div className="w-16 h-16 bg-gradient-to-br from-slate-100 to-slate-200 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Heart className="h-8 w-8 text-slate-600" />
                   </div>
                   <CardTitle className="text-2xl font-display font-semibold text-slate-800">
@@ -489,19 +425,6 @@ export default function LandingPage() {
 
       {/* CTA Section */}
       <section className="py-20 px-4 bg-gradient-to-r from-slate-600 to-slate-700 text-white relative overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-10 left-10 animate-float">
-            <Sparkles className="h-8 w-8 text-white opacity-20" />
-          </div>
-          <div className="absolute bottom-10 right-10 animate-float-delayed">
-            <Star className="h-10 w-10 text-white opacity-15" />
-          </div>
-          <div className="absolute top-1/2 left-1/4 animate-pulse">
-            <Target className="h-6 w-6 text-white opacity-25" />
-          </div>
-        </div>
-
         <div className="container mx-auto text-center max-w-3xl relative z-10">
           <h2 className="text-4xl font-display font-bold mb-6 animate-fade-in-up">
             Siap Meningkatkan Efisiensi Sekolah Anda?
@@ -518,7 +441,7 @@ export default function LandingPage() {
               className="text-lg px-8 py-6 bg-white text-slate-800 hover:bg-slate-100 hover:text-slate-900 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-semibold"
             >
               <Link href="/dashboard">
-                Akses Dashboard Gratis
+                Akses Dashboard
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
