@@ -67,7 +67,7 @@ export default function LandingPage() {
           }
         })
       },
-      { threshold: 0.1, rootMargin: "0px 0px -100px 0px" },
+      { threshold: 0.05, rootMargin: "0px 0px -50px 0px" },
     )
 
     Object.values(sectionRefs.current).forEach((ref) => {
@@ -75,6 +75,25 @@ export default function LandingPage() {
     })
 
     return () => observer.disconnect()
+  }, [])
+
+  // Additional useEffect to handle fallback for sections not detected by Intersection Observer
+  useEffect(() => {
+    const handleScroll = () => {
+      const dashboardSection = document.getElementById("dashboard-preview")
+      if (dashboardSection) {
+        const rect = dashboardSection.getBoundingClientRect()
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0
+        if (isVisible) {
+          setVisibleSections((prev) => new Set([...prev, "dashboard-preview"]))
+        }
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    handleScroll() // Check immediately
+
+    return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   const scrollToSection = (sectionId: string) => {
@@ -105,7 +124,7 @@ export default function LandingPage() {
             Sistem Manajemen Akademik Terdepan
           </Badge>
 
-          <h1 className="text-5xl md:text-6xl font-display font-bold text-slate-800 mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-slate-800 mb-6 leading-tight">
             <span className="animate-fade-in-up block">Kelola Akademik</span>
             <span className="text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text block animate-gradient-x animate-fade-in-up animation-delay-500">
               Lebih Mudah & Efisien
