@@ -136,7 +136,7 @@ export default function LandingPage() {
               asChild
               className="text-lg w-full md:w-60 px-8 py-6 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-semibold"
             >
-              <Link href="https://my.kaldemik.com">
+              <Link href="https://my.kaldemik.com/admin">
                 Mulai Sekarang
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
@@ -233,7 +233,7 @@ export default function LandingPage() {
               asChild
               className="bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full px-8 font-semibold"
             >
-              <Link href="https://my.kaldemik.com">
+              <Link href="https://my.kaldemik.com/admin">
                 Akses Dashboard Lengkap
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
@@ -453,7 +453,7 @@ export default function LandingPage() {
               asChild
               className="text-lg w-60 px-8 py-6 bg-white text-slate-800 hover:bg-slate-100 hover:text-slate-900 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-semibold"
             >
-              <Link href="https://my.kaldemik.com">
+              <Link href="https://my.kaldemik.com/admin">
                 Akses Dashboard
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
