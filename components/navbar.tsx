@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { GraduationCap, ArrowRight, Menu, X } from "lucide-react"
+import { School, ArrowRight, Menu, X } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
 
@@ -25,7 +25,7 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 border-b bg-white/95 backdrop-blur-md z-50 border-slate-200/50 transition-all duration-300">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <GraduationCap className="h-8 w-8 text-slate-600" />
+          <School className="h-8 w-8 text-slate-600" />
           <span className="text-xl font-display font-bold text-slate-700">Kelola Akademik</span>
         </div>
         <nav className="hidden md:flex items-center space-x-8">
