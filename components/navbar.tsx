@@ -46,7 +46,7 @@ export default function Navbar() {
             size="sm"
             className="bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white transition-all duration-300 shadow-lg hover:shadow-xl rounded-full px-4 font-medium text-sm"
           >
-            <Link href="/dashboard">
+            <Link href="https://my.kaldemik.com">
               Masuk Dashboard
               <ArrowRight className="ml-2 h-3 w-3" />
             </Link>
@@ -90,7 +90,7 @@ export default function Navbar() {
               size="sm"
               className="mt-2 mb-2.5 w-full bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white transition-all duration-300 shadow-lg hover:shadow-xl rounded-full px-4 font-medium text-sm"
             >
-              <Link href="/dashboard">
+              <Link href="https://my.kaldemik.com">
                 Masuk Dashboard
                 <ArrowRight className="ml-2 h-3 w-3" />
               </Link>

@@ -136,7 +136,7 @@ export default function LandingPage() {
               asChild
               className="text-lg w-full md:w-60 px-8 py-6 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-semibold"
             >
-              <Link href="/dashboard">
+              <Link href="https://my.kaldemik.com">
                 Mulai Sekarang
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
@@ -156,7 +156,7 @@ export default function LandingPage() {
       {/* Dashboard Preview Section */}
       <section
         id="dashboard-preview"
-        ref={(el) => (sectionRefs.current["dashboard-preview"] = el)}
+        ref={(el: any) => (sectionRefs.current["dashboard-preview"] = el)}
         className="pt-20 pb-32 px-4 bg-white/60 backdrop-blur-sm relative"
       >
         <div className="container mx-auto relative z-10">
@@ -233,7 +233,7 @@ export default function LandingPage() {
               asChild
               className="bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full px-8 font-semibold"
             >
-              <Link href="/dashboard">
+              <Link href="https://my.kaldemik.com">
                 Akses Dashboard Lengkap
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
@@ -245,7 +245,7 @@ export default function LandingPage() {
       {/* Features Section */}
       <section
         id="features"
-        ref={(el) => (sectionRefs.current["features"] = el)}
+        ref={(el: any) => (sectionRefs.current["features"] = el)}
         className="pt-20 pb-32 px-4 bg-white/80 backdrop-blur-sm relative"
       >
         <div className="container mx-auto relative z-10">
@@ -299,7 +299,7 @@ export default function LandingPage() {
       {/* Support Developer Section */}
       <section
         id="support"
-        ref={(el) => (sectionRefs.current["support"] = el)}
+        ref={(el: any) => (sectionRefs.current["support"] = el)}
         className="pt-20 pb-32 px-4 bg-white/90 backdrop-blur-sm relative"
       >
         <div className="container mx-auto relative z-10">
@@ -453,7 +453,7 @@ export default function LandingPage() {
               asChild
               className="text-lg w-60 px-8 py-6 bg-white text-slate-800 hover:bg-slate-100 hover:text-slate-900 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full font-semibold"
             >
-              <Link href="/dashboard">
+              <Link href="https://my.kaldemik.com">
                 Akses Dashboard
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
