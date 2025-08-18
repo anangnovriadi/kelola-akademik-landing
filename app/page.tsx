@@ -79,13 +79,13 @@ export default function LandingPage() {
   }, [])
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const handleBeforeUnload = () => {
       window.scrollTo(0, 0)
-    }, 50)  // delay 50ms
+    }
+    window.addEventListener("beforeunload", handleBeforeUnload)
 
-    return () => clearTimeout(timer)
-  }, []);
-
+    return () => window.removeEventListener("beforeunload", handleBeforeUnload)
+  }, [])
 
   // Additional useEffect to handle fallback for sections not detected by Intersection Observer
   useEffect(() => {
