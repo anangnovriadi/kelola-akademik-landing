@@ -20,7 +20,9 @@ export const metadata: Metadata = {
   title: "Kelola Akademik - Sistem Manajemen Akademik Terdepan",
   description:
     "Platform manajemen akademik all-in-one yang membantu sekolah mengelola siswa, presensi, dan administrasi dengan lebih efektif dan terorganisir.",
-  generator: "v0.app",
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
 
 export default function RootLayout({
@@ -32,11 +34,11 @@ export default function RootLayout({
     <html lang="id" className={`${inter.variable} ${poppins.variable}`}>
       <head>
         <style>{`
-html {
-  font-family: ${inter.style.fontFamily}, system-ui, -apple-system, sans-serif;
-  --font-sans: ${inter.variable};
-  --font-display: ${poppins.variable};
-}
+          html {
+            font-family: ${inter.style.fontFamily}, system-ui, -apple-system, sans-serif;
+            --font-sans: ${inter.variable};
+            --font-display: ${poppins.variable};
+          }
         `}</style>
       </head>
       <body className="font-sans antialiased">{children}</body>

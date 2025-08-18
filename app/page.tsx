@@ -78,6 +78,10 @@ export default function LandingPage() {
     return () => observer.disconnect()
   }, [])
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [])
+
   // Additional useEffect to handle fallback for sections not detected by Intersection Observer
   useEffect(() => {
     const handleScroll = () => {
@@ -116,21 +120,21 @@ export default function LandingPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-18 md:pt-52 md:pb-46 px-4 relative">
+      <section className="pt-32 pb-18 md:pt-52 md:pb-46 px-4 relative overflow-hidden">
         <div className="container mx-auto text-center max-w-4xl relative z-10">
-          <h1 className="text-4xl md:text-6xl font-display font-bold text-slate-800 mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-display font-bold text-slate-800 mb-6 leading-tight animate-fade-in-up">
             <span className="block">Kelola Akademik</span>
             <span className="text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text block">
               Lebih Mudah & Efisien
             </span>
           </h1>
 
-          <p className="text-xl text-slate-600 mb-8 leading-relaxed font-normal">
+          <p className="text-xl text-slate-600 mb-8 leading-relaxed font-normal animate-fade-in-up animation-delay-300">
             Platform manajemen akademik all-in-one yang membantu sekolah mengelola siswa, presensi, dan administrasi
             dengan lebih efektif dan terorganisir.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-500">
             <Button
               size="lg"
               asChild
