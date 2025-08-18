@@ -79,8 +79,13 @@ export default function LandingPage() {
   }, [])
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [])
+    const timer = setTimeout(() => {
+      window.scrollTo(0, 0)
+    }, 50)  // delay 50ms
+
+    return () => clearTimeout(timer)
+  }, []);
+
 
   // Additional useEffect to handle fallback for sections not detected by Intersection Observer
   useEffect(() => {
