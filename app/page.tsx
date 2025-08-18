@@ -79,7 +79,7 @@ export default function LandingPage() {
   }, [])
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    window.scrollTo(0, 0);
   }, [])
 
   // Additional useEffect to handle fallback for sections not detected by Intersection Observer
